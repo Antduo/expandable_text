@@ -4,8 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class ExpandableText extends StatefulWidget {
-  const ExpandableText(
-    this.text, {
+  const ExpandableText(this.text, {
     Key key,
     @required this.expandText,
     @required this.collapseText,
@@ -17,12 +16,13 @@ class ExpandableText extends StatefulWidget {
     this.textScaleFactor,
     this.maxLines = 2,
     this.semanticsLabel,
-  }) : assert(text != null),
-       assert(expandText != null),
-       assert(collapseText != null),
-       assert(expanded != null),
-       assert(maxLines != null && maxLines > 0),
-       super(key: key);
+  })
+      : assert(text != null),
+        assert(expandText != null),
+        assert(collapseText != null),
+        assert(expanded != null),
+        assert(maxLines != null && maxLines > 0),
+        super(key: key);
 
   final String text;
   final String expandText;
@@ -76,15 +76,31 @@ class ExpandableTextState extends State<ExpandableText> {
     final textScaleFactor = widget.textScaleFactor ?? MediaQuery.textScaleFactorOf(context);
     final locale = Localizations.localeOf(context, nullOk: true);
 
-    final linkText = _expanded ? ' ${widget.collapseText}' : '\u2026 ${widget.expandText}';
-    final linkColor = widget.linkColor ?? Theme.of(context).accentColor;
+    final linkText = _expanded ? ' ${widget.collapseText}' : '${widget.expandText}';
+    final linkColor = widget.linkColor ?? Theme
+        .of(context)
+        .accentColor;
+
+    // final link = TextSpan(
+    //   text: linkText,
+    //   style: effectiveTextStyle.copyWith(
+    //     color: linkColor,
+    //   ),
+    //   recognizer: _tapGestureRecognizer,
+    // );
 
     final link = TextSpan(
-      text: linkText,
-      style: effectiveTextStyle.copyWith(
-        color: linkColor,
-      ),
-      recognizer: _tapGestureRecognizer,
+      text: _expanded ? '' : '\u2026 ',
+      style: effectiveTextStyle,
+      children: <TextSpan>[
+        TextSpan(
+          text: linkText,
+          style: effectiveTextStyle.copyWith(
+            color: linkColor,
+          ),
+          recognizer: _tapGestureRecognizer,
+        )
+      ],
     );
 
     final text = TextSpan(

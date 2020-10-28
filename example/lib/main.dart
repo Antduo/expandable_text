@@ -30,16 +30,17 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             ExpandableText(
               'Short text',
-              expandText: 'show more',
-              collapseText: 'show less',
+              expandText: '查看全部',
+              collapseText: '收起',
             ),
             SizedBox(height: 10.0),
             ExpandableText(
               'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-              expandText: 'show more',
-              collapseText: 'show less',
-              maxLines: 1,
+              expandText: '查看全部',
+              collapseText: '收起',
+              maxLines: 2,
               linkColor: Colors.blue,
+              style: TextStyle(color: Colors.redAccent),
             ),
           ],
         ),
