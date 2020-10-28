@@ -14,7 +14,9 @@ Add this to your package's pubspec.yaml file:
 
 ```
 dependencies:
-  expandable_text: 0.1.0
+    expandable_text:
+      git:
+        url: https://github.com/Antduo/expandable_text.git
 ```
 
 Next, import the package into your dart code:
