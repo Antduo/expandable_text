@@ -3,6 +3,7 @@
 [![pub package](https://img.shields.io/pub/v/expandable_text.svg)](https://pub.dev/packages/expandable_text)
 
 在源代码上修改省略号style为文字style.
+
 This Flutter package includes the widget `ExpandableText` which you can use to initially only show a
 defined number of lines of a probably long text. The widget appends a configurable text link which
 let's the user expand the full text, or collapse it again.
